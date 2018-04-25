@@ -1,234 +1,36 @@
-<!doctype html>
+
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
-<style>
-		#China{
-	  width: 800px;
-      height: auto;
-	}
-	#out{
-	width: 100%;
-    height: 50%;
-    position: relative;
-    text-align: center;
-	}
-	#mount{
-		position: absolute;
-		padding: 0;
-		right: 48%;
-		bottom:70%;
-		width: auto;
-	}
-	#bkwy{
-		position:absolute;
-		opacity: 0.8;
-		padding: 0;
-		margin: 0;
-		left: -500%;
-		display: none;
-		z-index: 2;
-	}
-	#mount:hover #bkwy{
-		display: block;
-	}
-	#wuyi{
-		transition: 1s;
-	}
-	#wuyi:hover{
-		width: 90px;
-	}
-	#sandbeach{
-		position: absolute;
-		padding: 0;
-		right: 48%;
-		bottom:28%;
-		width: auto;
-	}
-	#sand:hover{
-		width: 60px;
-	}
-	#sand{
-		transition: 1s;
-		transition-timing-function: ease;
-	}
-	#bkgly{
-		position:absolute;
-		opacity: 0.8;
-		padding: 0;
-		margin: 0;
-		left: -800%;
-		bottom: 120%;
-		z-index: 2;
-		display: none;
-	}
-	#sandbeach:hover #bkgly{
-		display: block;
-	}
-	#lane{
-		position: absolute;
-		padding: 0;
-		right: 39%;
-		bottom:55%;
-		width: auto;
-	}
-	#sevenlane:hover{
-		width: 80px;
-	}
-	#sevenlane{
-		transition: 1s;
-		transition-timing-function: ease;
-	}
-	#bksfqx{
-		position:absolute;
-		opacity: 0.8;
-		padding: 0;
-		margin: 0;
-		left: -800%;
-		z-index: 2;
-		display:none;
-	}
-	#lane:hover #bksfqx{
-		display: block;
-	}
-	#bulding{
-		position: absolute;
-		padding: 0;
-		right:60%;
-		bottom:38%;
-		width: auto;
-	}
-	#bktl{
-		position:absolute;
-		opacity: 0.8;
-		padding: 0;
-		margin: 0;
-		left: -650%;
-		z-index: 2;
-		display: none;
-	}
-	#tulou{
-		transition: 1s;
-		transition-timing-function: ease;
-	}
-	#tulou:hover{
-		width:60px; 
-	}
-	#bulding:hover #bktl{
-		display: block;
-	}
-	#bigfish{
-		position:absolute;
-		opacity: 0.8;
-		padding: 0;
-		margin: 0;
-		left:700%;
-		z-index: 2;
-		display: none;
-	}
-	#bulding:hover #bigfish{
-		display: block;
-	}
-	#jtsf{
-		position:absolute;
-		opacity: 0.8;
-		padding: 0;
-		margin: 0;
-		left:200%;
-		z-index: 2;
-		display: none;
-	}
-	#lane:hover #jtsf{
-		display: block;
-	}
-	#jtgl{
-		position:absolute;
-		opacity: 0.8;
-		padding: 0;
-		margin: 0;
-		left:550%;
-		bottom: 390%;
-		z-index: 2;
-		display: none;
-	}
-	#sandbeach:hover #jtgl{
-		display: block;
-	}
-	#jtwy{
-		position:absolute;
-		opacity: 0.8;
-		padding: 0;
-		margin: 0;
-		left:399%;
-		z-index: 2;
-		display: none;
-	}
-	#mount:hover #jtwy{
-		display: block;
-	}
-	#p{
-		position: absolute;
-		padding: 0;
-		right: 50%;
-		bottom:38%;
-		width: auto;
-	}
-	p{
-		font-family:微软雅黑;Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
-		font-size:180%;
-		color:#48E11B;
-		display: block;
-	}
-	p:hover{
-		transition: 1s;
-		font-size: 200%;
-		transition-timing-function: ease;
-	}
+<title>自适应居中的登录框</title>
+<style type="text/css">
+body, html {
+	margin:0;
+	padding:0;
+	height:100%;	
+}
+#box {
+	width:100%;
+	height:100%;
+	/* 开启盒布局 */
+	display:-webkit-box;
+	display:-moz-box;
+	display:box;	
+	/* 水平居中 */
+	-webkit-box-pack:center;
+	-moz-box-pack:center;
+	box-pack:center;
+	/* 垂直居中 */
+	-webkit-box-align:center;
+	-moz-box-align:center;
+	box-align:center;
+}
 </style>
-</head>
-
+	</head>
 <body>
-<title>清新福建</title>
-<div id="out">
-	<img id="China" src="sucai/福建.svg" >
-	<div id="mount">
-	<a href="https://baike.baidu.com/item/%E6%AD%A6%E5%A4%B7%E5%B1%B1/917?fr=aladdin" target="_blank">
-	<img src="sucai/山 (1).svg" alt="武夷山" width="80" id="wuyi">
-	</a>
-	<img src="sucai/武夷山.png" id="bkwy">
-	<img src="sucai/jtwy.png" id="jtwy" width="380px">
-	</div>
-	<div id="sandbeach">
-	<a href="https://baike.baidu.com/item/%E9%BC%93%E6%B5%AA%E5%B1%BF/483700?fr=aladdin" target="_blank">
-	<img src="sucai/海滩.svg" width="50px" id="sand">
-	</a>
-	<img src="sucai/鼓浪屿、.png" id="bkgly">
-	<img src="sucai/jtgl.png" id="jtgl" width="300px">
-	</div>
-	<div id="lane">
-	<a href="https://baike.baidu.com/item/%E4%B8%89%E5%9D%8A%E4%B8%83%E5%B7%B7/21899" target="_blank">
-		<img id="sevenlane" src="sucai/三坊一照壁.svg" width="70px">
-	</a>
-	
-	<img id="bksfqx" src="sucai/三坊七巷.png">
-	<img id="jtsf" src="sucai/景图三坊.png" width="500px">
-	</div>
-	<div id="bulding">
-	<a href="https://baike.baidu.com/item/%E6%B0%B8%E5%AE%9A%E5%9C%9F%E6%A5%BC" target="_blank">
-		<img id="tulou" src="sucai/圆.svg" width="50px">
-	</a>
-		<img id="bktl"  src="sucai/土楼.png" >
-		<img id="bigfish" src="sucai/大鱼海棠.png" width="500px">
-	</div>
-	<div id="p">
-		<p>
-		清<br>
-		新<br>
-		福<br>
-		建<br>
-		</p>
-	</div>
+<div id="box">
+  <div><img src="sucai/广东.svg" /></div>
 </div>
 </body>
 </html>
