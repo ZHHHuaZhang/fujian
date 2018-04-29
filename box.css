@@ -2,8 +2,15 @@ body, html {
     margin:0;
     padding:0;
     height:100%;
+    overflow:hidden;
     background-color:lightblue;
 }
+
+div{
+    width:100%;
+    height:100%;
+}
+
 .box {
     width:100%;
     height:100%;
@@ -21,35 +28,21 @@ body, html {
     box-align:center;
 }
 
-#topfill{
-    width:1366px;
-    height:100px;
+.Global img{
+    width:1500px;
+    position:absolute;
+    top:-120px;
+    left:-120px;
+    z-index:0;
 }
 
-#leftfill{
-    width:300px;
-    height:720px;
+.Front *{
+    position:absolute;
+    display:flex;
+    z-index:1;
 }
 
-.NearExtend{
-    height:100px;
-    background-color:#505050;
+.Disable{
+    pointer-events:none;
 }
 
-.box > img{
-    width:2400px;
-    position:relative;
-    top:0px;
-}
-
-.GuangDong{
-    height:1000px;
-    position:relative;
-    top:-10px;
-}
-
-.GuangDong > img{
-    width:1000px;
-    position:relative;
-    top:-500px;
-}
