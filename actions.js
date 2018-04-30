@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //preset function
 function addWindowLoad(func)
 {

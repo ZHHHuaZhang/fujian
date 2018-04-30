@@ -1,15 +1,69 @@
+/********/
+/*Global*/
+
 body, html {
     margin:0;
     padding:0;
     height:100%;
     overflow:hidden;
     background-color:lightblue;
+    cursor:crosshair;
 }
 
 div{
-    width:100%;
-    height:100%;
+    height:64px;
 }
+
+input{
+    border:none;
+}
+
+button{
+    background-color:white;
+    border:none;
+    border-radius:10px;
+    height:56px;
+    width:56px;
+}
+
+button:hover{
+    opacity:0.7;
+}
+
+
+/***************/
+/*Layer 1 图层1*/
+
+.Front, .Front form{
+    display:flex;
+    flex-direction:row-reverse;
+}
+
+.Transform{
+    transform:rotate(90deg);
+}
+
+.Line{
+    height:4px;
+    width:320px;
+    top:320px;
+}
+
+.Right{
+    
+}
+
+.Right input{
+    width:320px;
+}
+
+.Front *{
+    z-index:1;
+}
+
+
+/*********/
+/*Layer 0*/
 
 .box {
     width:100%;
@@ -31,18 +85,13 @@ div{
 .Global img{
     width:1500px;
     position:absolute;
-    top:-120px;
+    top:-125px;
     left:-120px;
     z-index:0;
 }
 
-.Front *{
-    position:absolute;
-    display:flex;
-    z-index:1;
-}
 
 .Disable{
-    pointer-events:none;
+    
 }
 
