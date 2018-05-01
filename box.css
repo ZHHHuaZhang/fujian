@@ -60,7 +60,7 @@ button:hover{
 }
 
 .Right{
-    
+
 }
 
 .Right  input{
@@ -68,7 +68,8 @@ button:hover{
     height:64px;
 }
 
-
+.Right *{
+}
 
 /*********/
 /*Layer 0*/
