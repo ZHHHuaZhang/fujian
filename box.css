@@ -10,12 +10,14 @@ body, html {
     cursor:crosshair;
 }
 
-div{
-    height:64px;
+p{
+    width:100%;
+    height:20px;
 }
 
 input{
     border:none;
+    outline:none;
 }
 
 button{
@@ -24,6 +26,7 @@ button{
     border-radius:10px;
     height:56px;
     width:56px;
+    outline:none;
 }
 
 button:hover{
@@ -37,29 +40,34 @@ button:hover{
 .Front, .Front form{
     display:flex;
     flex-direction:row-reverse;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+}
+
+.Front *{
+    z-index:1;
 }
 
 .Transform{
     transform:rotate(90deg);
+    transform-origin:0% 0%;
 }
 
 .Line{
-    height:4px;
-    width:320px;
-    top:320px;
+    height:8px;
+    width:400px;
+    border-radius:0px;
 }
 
 .Right{
     
 }
 
-.Right input{
-    width:320px;
+.Right  input{
+    width:400px;
+    height:64px;
 }
 
-.Front *{
-    z-index:1;
-}
 
 
 /*********/
