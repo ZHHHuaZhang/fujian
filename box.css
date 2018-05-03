@@ -42,21 +42,55 @@ button:hover{
     flex-direction:row-reverse;
     flex-wrap:wrap;
     justify-content:flex-start;
+	align-items: flex-start;
+	min-width: 100px;
 }
 
 .Front *{
     z-index:1;
 }
-
+.zoomout{
+	position: relative;
+	right: 20px;
+	top: 30px;
+}
+.zoomin{
+	position: relative;
+	top: 130px;
+	left: 35px;
+}
+.currentlocation{
+	position: relative;
+	left:20px;
+	top: 133px;
+	width:380px;
+	height: 50px;
+}
+.currentlocation1{
+	position: relative;
+	left:-20px;
+	top: 200px;
+	width: 500px;
+	height: 50px;
+}
 .Transform{
     transform:rotate(90deg);
     transform-origin:0% 0%;
 }
 
+.search
+{
+	left: 380px;
+	top: 30px;
+	position: relative;
+}
 .Line{
     height:8px;
     width:400px;
     border-radius:0px;
+	left:700px;
+	top: 30px;
+	position: relative;
 }
 
 .Right{
@@ -92,7 +126,7 @@ button:hover{
 }
 
 .Global img{
-    width:1500px;
+    width:100%;
     position:absolute;
     top:-125px;
     left:-120px;
