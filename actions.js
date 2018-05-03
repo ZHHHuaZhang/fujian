@@ -1,47 +1,86 @@
-/*//preset function*/
-//function addWindowLoad(func)
-//{
-    //var oldLoads = window.onload;
-    ////before defining window.onload(s) its type is "null"
-    //if(typeof window.onload != "function")
-    //{
-        //window.onload = func; //set first loadfunc
-        ////window.onload's type is "function" now
-    //}
-    //else
-    //{
-        //window.onload = function()
-        //{
-            //oldLoads();
-            //func();
-        //}
-    //}
-//}
 
-
-//function renderCanvas(id, x1, y1, x2, y2){
-    //var c=document.getElementById(id);
-    //var ctx=c.getContext("2d");
-    //ctx.rect(x1, y1, x2, y2);
-    //ctx.fillStyle="#505050";
-    //ctx.fill();
-//}
-
-//window.onload = function(){
-    //renderCanvas("topfill",0,0,window.screen.availWidth,100);
-    //renderCanvas("leftfill",0,-100,300,window.screen.availHeight);
-/*}*/
-
-
-/**********/
+///<summary>
 //jQuery 331
-//div self-adaptation
+
+"use strict"
+
+
+
+///<summary>
+//GlobalDefination
+
+var actulWidth;
+
+var currentScale;
+
+var originalScale;
+
+function GlobalDefination(){
+    actulWidth = $(".Global").width();
+    currentScale = actulWidth/$(".Global").width();
+    originalScale = currentScale;
+}
+
+
+
+///<summary>
+//autoContainerSize
 
 function autoHeight(container, maxLengthOne){
     var maxLength = $(maxLengthOne).width() + 80;
     $(container).height(maxLength);
 }
 
+
+
+///<summary>
+//Zoom
+
+function Zoom(){
+    $(".zoomIn").click(function(){
+        if(currentScale <= 2.5 * originalScale){
+            ZoomIn(".Global");
+        }
+    });
+    $(".zoomOut").click(function(){
+        if(currentScale > originalScale){
+            ZoomOut(".Global");
+        }
+    });
+
+}
+
+function ZoomIn(img){
+    var scaleRefer = currentScale;
+
+    var zoom = setInterval(function(){
+        scaleRefer += 0.05;
+        $(img).css("transform", "scale("+scaleRefer+")");
+        if(scaleRefer >= currentScale + 0.25){
+            clearInterval(zoom);
+            currentScale = scaleRefer;
+        }
+    }, 24);
+
+}
+
+function ZoomOut(img){
+    var scaleRefer = currentScale;
+
+    var zoom = setInterval(function(){
+        scaleRefer -= 0.05;
+        $(img).css("transform", "scale("+scaleRefer+")");
+        if(scaleRefer <= currentScale - 0.25){
+            clearInterval(zoom);
+            currentScale = scaleRefer;
+        }
+    }, 24);
+}
+
+
 $(document).ready(function(){
-    autoHeight(".Right", ".Right>button");
+    GlobalDefination();
+    Zoom();
+    alert(currentScale);
+    alert($(".Global").width());
 })
