@@ -7,8 +7,11 @@ body, html {
     height:100%;
     overflow:hidden;
     background-color:lightblue;
-    cursor:crosshair;
 }
+
+/*div{*/
+    /*padding:20px;*/
+/*}*/
 
 p{
     width:100%;
@@ -49,12 +52,13 @@ button:hover{
 .Front *{
     z-index:1;
 }
-.zoomout{
+.zoomin{
 	position: relative;
 	right: 20px;
 	top: 30px;
+
 }
-.zoomin{
+.zoomout{
 	position: relative;
 	top: 130px;
 	left: 35px;
@@ -125,16 +129,16 @@ button:hover{
     box-align:center;
 }
 
-.Global img{
-    width:100%;
-    position:absolute;
-    top:-125px;
-    left:-120px;
-    z-index:0;
+.Global{
+    height:100%;
 }
 
-
-.Disable{
-    
+.map{
+    width:1500px;
+    position:absolute;
+    left:-125px;
+    top:-125px;
+    z-index:0;
+    cursor:crosshair;
 }
 
