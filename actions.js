@@ -21,6 +21,7 @@ function GlobalDefination(div, mapClass){
         width: $(mapClass).width(),
         top: parseInt($(mapClass).css("top")),
         left: parseInt($(mapClass).css("left")),
+		originalMapWidth: parseInt($(mapClass).width())
     }
     $("html").scrollTop(0);
     $("html").scrollLeft(0);
@@ -128,10 +129,18 @@ function specificZoom(zoomClass, scale, topChange, leftChange, zoomout){
 
     map.left = scale*(map.left - leftChange);
 
-    if(zoomout === true){
+    if(zoomout === true && map.width !== map.originalMapWidth){
+		
         map.top = mapOutAvoid(map.top, 0.5, 1/6.4, map.height);
 
         map.left = mapOutAvoid(map.left, 0.33, 1/12, map.width);
+    }
+	
+	if(zoomout === true && map.width === map.originalMapWidth){
+		
+        map.top = -125;
+
+        map.left = -125;
     }
 
     $(zoomClass).animate({
@@ -193,8 +202,8 @@ function t(){
 
 
 $(document).ready(function(){
-    //autoHeight(".Right", ".search", 1);
-    //autoHeight(".Zoom", ".zoomout", 2);
+    autoHeight(".Right", ".search", 1);
+    autoHeight(".Zoom", ".zoomout", 2);
     GlobalDefination(".Global", ".map");
     mySlide(".map");
     myZoom(".map");
