@@ -21,8 +21,6 @@ function GlobalDefination(div, mapClass){
         width: $(mapClass).width(),
         top: parseInt($(mapClass).css("top")),
         left: parseInt($(mapClass).css("left")),
-        topChange:0,
-        leftChange:0
     }
     $("html").scrollTop(0);
     $("html").scrollLeft(0);
@@ -70,6 +68,23 @@ function offThenOnElement(mode, element, time){
 
 }
 
+
+
+///<summary>
+//map out of range prevention
+
+function mapOutAvoid(value, max, min, wh){
+    if( (value) <= -wh*min &&  (value) >= -wh*max){
+    }
+    else if( (value) > -wh*min){
+        value = -(wh*min);
+    }
+    else if( (value) < -wh*max){
+        value = -(wh*max);
+    }
+    return value;
+}
+
 ///<summary>
 //Zoom
 
@@ -84,7 +99,7 @@ function myZoom(zoomClass){
             offThenOnElement(true, this, 300);
             offThenOnElement(true, ".zoomout", 300);
 
-            specificZoom(zoomClass, 2, 125, 225 );
+            specificZoom(zoomClass, 2, 125, 225, false );
 
         }
 
@@ -96,14 +111,14 @@ function myZoom(zoomClass){
 
             offThenOnElement(true, this, 300);
 
-            specificZoom(zoomClass, 1/2, -250, -450);
+            specificZoom(zoomClass, 1/2, -250, -450, true);
 
         }
 
     });
 }
 
-function specificZoom(zoomClass, scale, topChange, leftChange){
+function specificZoom(zoomClass, scale, topChange, leftChange, zoomout){
 
     map.height *= scale;
 
@@ -112,6 +127,12 @@ function specificZoom(zoomClass, scale, topChange, leftChange){
     map.top = scale*(map.top - topChange);
 
     map.left = scale*(map.left - leftChange);
+
+    if(zoomout === true){
+        map.top = mapOutAvoid(map.top, 0.5, 1/6.4, map.height);
+
+        map.left = mapOutAvoid(map.left, 0.33, 1/12, map.width);
+    }
 
     $(zoomClass).animate({
         height: map.height,
@@ -150,9 +171,9 @@ function mySlide(slideClass){
 
         var topChange = clientYRefer - event.clientY;
         var leftChange = clientXRefer - event.clientX;
-        (map.left-=leftChange) <= -(map.width/12) ?(map.left *= 1) : (map.left= -(map.width/12));
-        (map.top -=topChange) <= -(map.height/6.4) ? (map.top *= 1) : (map.top= -(map.height/6.4));
 
+        map.top = mapOutAvoid(map.top-topChange, 0.58, 1/6.4, map.height);
+        map.left = mapOutAvoid(map.left-leftChange, 0.33, 1/12, map.width);
 
         if(map.width > originalMapWidth){
             $(slideClass).animate({
@@ -168,11 +189,7 @@ function mySlide(slideClass){
 }
 
 function t(){
-    $("img").click(function(){
-
-    alert($(this).height());
-    })
-}
+    }
 
 
 $(document).ready(function(){
@@ -181,4 +198,5 @@ $(document).ready(function(){
     GlobalDefination(".Global", ".map");
     mySlide(".map");
     myZoom(".map");
+    t();
 })
