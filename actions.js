@@ -202,8 +202,8 @@ function t(){
 
 
 $(document).ready(function(){
-    //autoHeight(".Right", ".search", 1);
-    //autoHeight(".Zoom", ".zoomout", 2);
+    autoHeight(".Right", ".search", 1);
+    autoHeight(".Zoom", ".zoomout", 2);
     GlobalDefination(".Global", ".map");
     mySlide(".map");
     myZoom(".map");
